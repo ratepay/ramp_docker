@@ -19,6 +19,7 @@ RUN /usr/local/bin/composer create-project --prefer-dist laravel/lumen /var/www/
 RUN composer require ratepay/php-library
 
 RUN git clone https://github.com/ratepay/ramp.git ramp-temp && \
+    rm -rf ramp-temp/.git && \
     rsync -r ramp-temp/ ./ && \
     rm -rf ramp-temp
 
